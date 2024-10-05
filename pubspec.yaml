@@ -11,12 +11,17 @@ dependencies:
     path: packages/analytics_repository
   app_logging:
     path: packages/app_logging
+  bloc_concurrency: ^0.2.5
+  city_repository:
+    path: packages/city_repository
   equatable: ^2.0.5
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.6
   go_router: ^14.3.0
   provider: ^6.1.2
+  skeletonizer: ^1.4.2
+  stream_transform: ^2.1.0
 
 dev_dependencies:
   flutter_test:

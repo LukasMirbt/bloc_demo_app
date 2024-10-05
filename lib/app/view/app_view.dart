@@ -11,6 +11,17 @@ class AppView extends StatelessWidget {
 
     return MaterialApp.router(
       routerConfig: routerConfig,
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.blue,
+        ),
+        appBarTheme: const AppBarTheme(
+          elevation: 0,
+          scrolledUnderElevation: 0,
+          backgroundColor: Colors.transparent,
+          surfaceTintColor: Colors.transparent,
+        ),
+      ),
     );
   }
 }
