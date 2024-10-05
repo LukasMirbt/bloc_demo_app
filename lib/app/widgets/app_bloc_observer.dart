@@ -33,7 +33,7 @@ class AppBlocObserver extends BlocObserver {
     super.onError(bloc, error, stackTrace);
   }
 
-  @override
+/*   @override
   void onCreate(BlocBase<dynamic> bloc) {
     super.onCreate(bloc);
     _logger.info('opened ${bloc.runtimeType}');
@@ -43,5 +43,5 @@ class AppBlocObserver extends BlocObserver {
   void onClose(BlocBase<dynamic> bloc) {
     _logger.info('closed ${bloc.runtimeType}');
     super.onClose(bloc);
-  }
+  } */
 }

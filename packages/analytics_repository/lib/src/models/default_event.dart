@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:analytics_repository/analytics_repository.dart';
 import 'package:recase/recase.dart';
 
@@ -16,5 +18,7 @@ class DefaultEvent extends AnalyticsEvent {
   final String name;
 
   @override
-  Future<void> send() async {}
+  Future<void> send() async {
+    log('Sent analytic: $name');
+  }
 }

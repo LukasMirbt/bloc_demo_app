@@ -1,6 +1,7 @@
 import 'package:analytics_repository/analytics_repository.dart';
 import 'package:app_logging/app_logging.dart';
 import 'package:bloc_demo_app/app/app.dart';
+import 'package:city_repository/city_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -19,9 +20,12 @@ void main() {
     analyticsRepository: analyticsRepository,
   );
 
+  const cityRepository = CityRepository();
+
   runApp(
     App(
       analyticsRepository: analyticsRepository,
+      cityRepository: cityRepository,
       router: router,
     ),
   );
