@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:analytics_repository/analytics_repository.dart';
 
 class CustomEvent extends AnalyticsEvent {
@@ -13,7 +15,11 @@ class CustomEvent extends AnalyticsEvent {
   final Map<String, dynamic> parameters;
 
   @override
-  Future<void> send() async {}
+  Future<void> send() async {
+    log(
+      'Sent event: $name with parameters: $parameters',
+    );
+  }
 
   @override
   List<Object?> get props => [name, parameters];

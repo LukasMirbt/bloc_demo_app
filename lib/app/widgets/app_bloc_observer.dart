@@ -28,12 +28,6 @@ class AppBlocObserver extends BlocObserver {
   }
 
   @override
-  void onError(BlocBase<dynamic> bloc, Object error, StackTrace stackTrace) {
-    _logger.severe('error ${bloc.runtimeType}', error, stackTrace);
-    super.onError(bloc, error, stackTrace);
-  }
-
-/*   @override
   void onCreate(BlocBase<dynamic> bloc) {
     super.onCreate(bloc);
     _logger.info('opened ${bloc.runtimeType}');
@@ -43,5 +37,20 @@ class AppBlocObserver extends BlocObserver {
   void onClose(BlocBase<dynamic> bloc) {
     _logger.info('closed ${bloc.runtimeType}');
     super.onClose(bloc);
+  }
+
+  @override
+  void onError(BlocBase<dynamic> bloc, Object error, StackTrace stackTrace) {
+    _logger.severe('error ${bloc.runtimeType}', error, stackTrace);
+    super.onError(bloc, error, stackTrace);
+  }
+
+/*   @override
+  void onTransition(
+    Bloc<dynamic, dynamic> bloc,
+    Transition<dynamic, dynamic> transition,
+  ) {
+    _logger.info(transition.toString());
+    super.onTransition(bloc, transition);
   } */
 }
