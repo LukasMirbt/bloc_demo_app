@@ -1,20 +1,28 @@
+import 'package:analytics_repository/analytics_repository.dart';
+import 'package:app_logging/app_logging.dart';
+import 'package:bloc_demo_app/app/app.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
-  runApp(const MainApp());
-}
+  final logger = AppLogging.init();
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+  const analyticsRepository = AnalyticsRepository();
 
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
-    );
-  }
+  Bloc.observer = AppBlocObserver(
+    logger: logger,
+    analyticsRepository: analyticsRepository,
+  );
+
+  final router = AppRouter.routerConfig(
+    logger: logger,
+    analyticsRepository: analyticsRepository,
+  );
+
+  runApp(
+    App(
+      analyticsRepository: analyticsRepository,
+      router: router,
+    ),
+  );
 }
